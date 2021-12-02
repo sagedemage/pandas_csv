@@ -1,6 +1,7 @@
 """Testing Subtraction"""
 
 from tests import read_csv
+from tests import log_reporting as log
 from calc.calculations.subtraction import Subtraction
 
 
@@ -16,6 +17,7 @@ def test_subtraction_two_values():
         subtraction = Subtraction(columns[0][i], (columns[1][i],))
         # Act and Assert
         assert subtraction.get_result() == columns[2][i]
+        log.report_log_info(path, i, "subtraction", subtraction.get_result())
 
 
 def test_subtraction_three_values():
@@ -30,3 +32,4 @@ def test_subtraction_three_values():
         subtraction = Subtraction(columns[0][i], (columns[1][i], columns[2][i]))
         # Act and Assert
         assert subtraction.get_result() == columns[3][i]
+        log.report_log_info(path, i, "subtraction", subtraction.get_result())

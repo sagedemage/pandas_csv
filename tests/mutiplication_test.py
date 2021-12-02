@@ -1,6 +1,7 @@
 """Testing Addition"""
 
 from tests import read_csv
+from tests import log_reporting as log
 from calc.calculations.multiplication import Multiplication
 
 
@@ -16,6 +17,7 @@ def test_multiplication_two_values():
         multiplication = Multiplication(columns[0][i], (columns[1][i],))
         # Act and Assert
         assert multiplication.get_result() == columns[2][i]
+        log.report_log_info(path, i, "multiplication", multiplication.get_result())
 
 
 def test_multiplication_three_values():
@@ -30,3 +32,4 @@ def test_multiplication_three_values():
         multiplication = Multiplication(columns[0][i], (columns[1][i], columns[2][i]))
         # Act and Assert
         assert multiplication.get_result() == columns[3][i]
+        log.report_log_info(path, i, "multiplication", multiplication.get_result())

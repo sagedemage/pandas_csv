@@ -9,4 +9,5 @@ pytest  --pylint --cov
 * .coveragerc is the config for coverage 
 * setup.py is a config file for pytest
 ## Test Result
-![Test Result](images/test_result.png)
+![Test Result](images/test_result_1.png)
+![Test Result](images/test_result_2.png)
